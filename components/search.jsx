@@ -3,6 +3,7 @@
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { SearchIcon } from "lucide-react";
 
 export default function Search() {
 
@@ -36,9 +37,11 @@ export default function Search() {
   }, [input])
 
   return (
-    <div>
-      <Input placeholder="Search" value={input} onChange={handleChange} className="max-w-2xl mx-auto"/>
-      <Button variant="outline" size="icon"></Button>
+    <div className="flex gap-2 w-full max-w-2xl mx-auto">
+      <Input placeholder="Search" value={input} onChange={handleChange} />
+      <Button variant="outline" size="icon" className="hover:cursor-pointer">
+        <SearchIcon />
+      </Button>
     </div>
   );
 }
